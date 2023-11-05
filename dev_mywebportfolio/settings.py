@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'dev_mywebportfolio.urls'
@@ -77,6 +78,16 @@ WSGI_APPLICATION = 'dev_mywebportfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# configuracion base de datos HEROKU
+import dj_database_url
+from decoulple import config
+
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
+
 """
 DATABASES = {
     'default': {
@@ -85,7 +96,6 @@ DATABASES = {
     }
 }
 """
-
 
 """DATABASES = {
     "default": {
@@ -97,7 +107,8 @@ DATABASES = {
     }
 }"""
 
-DATABASES = {
+# configuracion base de datos para HOST RAILWAY
+"""DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         'HOST': 'viaduct.proxy.rlwy.net',
@@ -107,7 +118,7 @@ DATABASES = {
         'PASSWORD': 'c52Bee65EFEbGb-23G4cfb-eFCA5GfAC',
     }
 }
-
+"""
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -141,13 +152,16 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
