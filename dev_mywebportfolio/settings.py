@@ -86,6 +86,7 @@ DATABASES = {
 }
 """
 
+"""
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -93,6 +94,17 @@ DATABASES = {
         'NAME': 'portfolioweb',
         'USER': 'iranmx2',
         'PASSWORD': 12345,
+    }
+}
+"""
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': 41227,
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'c52Bee65EFEbGb-23G4cfb-eFCA5GfAC',
     }
 }
 
