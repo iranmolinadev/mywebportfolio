@@ -87,7 +87,7 @@ DATABASES = {
 """
 
 
-DATABASES = {
+"""DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         'HOST': '127.0.0.1',
@@ -95,9 +95,9 @@ DATABASES = {
         'USER': 'iranmx2',
         'PASSWORD': 12345,
     }
-}
+}"""
 
-"""DATABASES = {
+DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         'HOST': 'viaduct.proxy.rlwy.net',
@@ -107,7 +107,7 @@ DATABASES = {
         'PASSWORD': 'c52Bee65EFEbGb-23G4cfb-eFCA5GfAC',
     }
 }
-"""
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
