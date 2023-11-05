@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'dev_mywebportfolio.wsgi.application'
 
 # configuracion base de datos HEROKU
 import dj_database_url
-from decoulple import config
+from decouple import config
 
 DATABASES = {
     'default': dj_database_url.config(
