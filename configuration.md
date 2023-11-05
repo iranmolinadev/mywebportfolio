@@ -10,4 +10,6 @@ heroku config:set DISABLE_COLLECTSTATIC=1
 
 heroku addons:attach postgresql-acute-23421
 
+# configuracion remoto Heroku 
 
+heroku git:remote -a iranmx2webportfolio
